@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Local Time</title>
+</head>
+<body>
+
+<h2>Client Country Date & Time</h2>
+
+<select id="timezone" onchange="loadTime()">
+    <option value="Asia/Kolkata">India</option>
+    <option value="Europe/London">UK</option>
+    <option value="America/New_York">USA</option>
+    <option value="Asia/Singapore">Singapore</option>
+</select>
+
+<p id="time">Loading...</p>
+
+<script>
+    function loadTime() {
+        const tz = document.getElementById("timezone").value;
+
+        fetch(`/api/datetime?timezone=${tz}`)
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("time").innerText = data;
+            });
+    }
+
+    setInterval(loadTime, 1000);
+    loadTime();
+</script>
+
+</body>
+</html>

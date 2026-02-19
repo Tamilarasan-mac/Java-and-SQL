@@ -12,12 +12,17 @@ public class overloading {
         System.out.println(a+b+c);
     }
 
+    void sum(double a , double b)
+    {
+        System.out.println(a+b);
+    }
 
     public static void main(String[] args) throws Exception {
 
                 overloading obj1 = new overloading();
                     obj1.sum(10,90);
                     obj1.sum(10,20,30);
-            
+                    obj1.sum(24.5,25.5);
     }
 }
+

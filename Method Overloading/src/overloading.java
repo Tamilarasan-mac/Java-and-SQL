@@ -11,7 +11,7 @@ public class overloading {
     {
         System.out.println(a+b+c);
     }
-
+        // Method 3 (Same method , But Different parameters and Different data type)
     void sum(double a , double b)
     {
         System.out.println(a+b);
@@ -25,4 +25,5 @@ public class overloading {
                     obj1.sum(24.5,25.5);
     }
 }
+
 
